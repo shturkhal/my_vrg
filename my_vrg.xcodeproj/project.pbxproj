@@ -13,6 +13,10 @@
 		7B7829192C14C1A600C459B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B7829182C14C1A600C459B4 /* Preview Assets.xcassets */; };
 		7B78291B2C14C1A600C459B4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B78291A2C14C1A600C459B4 /* Persistence.swift */; };
 		7B78291E2C14C1A600C459B4 /* my_vrg.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B78291C2C14C1A600C459B4 /* my_vrg.xcdatamodeld */; };
+		7B7829262C14C6C000C459B4 /* MostEmailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7829252C14C6C000C459B4 /* MostEmailedView.swift */; };
+		7B7829282C14C6E600C459B4 /* MostSharedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7829272C14C6E600C459B4 /* MostSharedView.swift */; };
+		7B78292A2C14C70E00C459B4 /* MostViewedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7829292C14C70E00C459B4 /* MostViewedView.swift */; };
+		7B78292C2C14C79000C459B4 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B78292B2C14C79000C459B4 /* FavoritesView.swift */; };
 		9E1A4DA7048D386AD8C0ACB1 /* Pods_my_vrg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F07A077370BDD8D3F754DB4 /* Pods_my_vrg.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +29,10 @@
 		7B7829182C14C1A600C459B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7B78291A2C14C1A600C459B4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		7B78291D2C14C1A600C459B4 /* my_vrg.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = my_vrg.xcdatamodel; sourceTree = "<group>"; };
+		7B7829252C14C6C000C459B4 /* MostEmailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostEmailedView.swift; sourceTree = "<group>"; };
+		7B7829272C14C6E600C459B4 /* MostSharedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSharedView.swift; sourceTree = "<group>"; };
+		7B7829292C14C70E00C459B4 /* MostViewedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewedView.swift; sourceTree = "<group>"; };
+		7B78292B2C14C79000C459B4 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		A66C2737C2341CDF04A841EB /* Pods-my_vrg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_vrg.release.xcconfig"; path = "Target Support Files/Pods-my_vrg/Pods-my_vrg.release.xcconfig"; sourceTree = "<group>"; };
 		FBC26AE55AC61408133902D7 /* Pods-my_vrg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_vrg.debug.xcconfig"; path = "Target Support Files/Pods-my_vrg/Pods-my_vrg.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				7B7829112C14C1A500C459B4 /* my_vrgApp.swift */,
+				7B7829242C14C6A400C459B4 /* Views */,
 				7B7829132C14C1A500C459B4 /* ContentView.swift */,
 				7B7829152C14C1A600C459B4 /* Assets.xcassets */,
 				7B78291A2C14C1A600C459B4 /* Persistence.swift */,
@@ -88,13 +97,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		7B7829242C14C6A400C459B4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7B7829252C14C6C000C459B4 /* MostEmailedView.swift */,
+				7B7829272C14C6E600C459B4 /* MostSharedView.swift */,
+				7B7829292C14C70E00C459B4 /* MostViewedView.swift */,
+				7B78292B2C14C79000C459B4 /* FavoritesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		ED9B83F01958C450C6463A08 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				FBC26AE55AC61408133902D7 /* Pods-my_vrg.debug.xcconfig */,
 				A66C2737C2341CDF04A841EB /* Pods-my_vrg.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,8 +233,12 @@
 			files = (
 				7B78291B2C14C1A600C459B4 /* Persistence.swift in Sources */,
 				7B7829142C14C1A500C459B4 /* ContentView.swift in Sources */,
+				7B7829282C14C6E600C459B4 /* MostSharedView.swift in Sources */,
+				7B7829262C14C6C000C459B4 /* MostEmailedView.swift in Sources */,
+				7B78292C2C14C79000C459B4 /* FavoritesView.swift in Sources */,
 				7B7829122C14C1A500C459B4 /* my_vrgApp.swift in Sources */,
 				7B78291E2C14C1A600C459B4 /* my_vrg.xcdatamodeld in Sources */,
+				7B78292A2C14C70E00C459B4 /* MostViewedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
