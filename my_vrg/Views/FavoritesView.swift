@@ -11,9 +11,9 @@ struct FavoritesView: View {
     var body: some View {
         NavigationView {
             List {
-                Text("Article 1")
-                Text("Article 2")
-                Text("Article 3")
+                Text("Item 1")
+                Text("Item 2")
+                Text("Item 3")
             }
             .navigationBarTitle("Favorites")
         }
