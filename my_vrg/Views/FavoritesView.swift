@@ -7,43 +7,8 @@
 
 import SwiftUI
 
-//struct FavoritesView: View {
-//    var body: some View {
-//        NavigationView {
-//           Text("Add your favorite news")
-//            .navigationBarTitle("favorites")
-//        }
-//    }
-//}
-
-//struct FavoritesView: View {
-//    @EnvironmentObject var favoritesViewModel: FavoritesViewModel
-//    
-//    var body: some View {
-//        NavigationView {
-//            Group {
-//                if favoritesViewModel.favoriteArticles.isEmpty {
-//                    Text("Add your favorite news")
-//                        .font(.headline)
-//                        .foregroundColor(.gray)
-//                } else {
-//                    List {
-//                        ForEach(favoritesViewModel.favoriteArticles) { article in
-//                            NavigationLink(destination: WebView(url: URL(string: article.url)!)) {
-//                                ArticleRowView(article: article)
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//            .navigationBarTitle("Favorites")
-//        }
-//    }
-//}
-
-
 struct FavoritesView: View {
-@EnvironmentObject var favoritesViewModel: FavoritesViewModel
+    @EnvironmentObject var favoritesViewModel: FavoritesViewModel
     
     var body: some View {
         NavigationView {
@@ -56,19 +21,23 @@ struct FavoritesView: View {
                     List {
                         ForEach(favoritesViewModel.favoriteArticles) { article in
                             NavigationLink(destination: WebView(url: URL(string: article.url)!)) {
-                                ArticleRowView(article: article)
+                                ArticleRowView(article: .constant(article))
+                                    .swipeActions {
+                                        Button(action: {
+                                            favoritesViewModel.removeFromFavorites(article: article)
+                                        }) {
+                                            Text("Remove")
+                                        }
+                                        .tint(.red)
+                                    }
                             }
                         }
-                        .onDelete(perform: removeArticles)
+                        .onDelete(perform: favoritesViewModel.removeFavorites(at:))
                     }
                 }
             }
             .navigationBarTitle("Favorites")
         }
-    }
-    
-    private func removeArticles(at offsets: IndexSet) {
-        favoritesViewModel.removeFromFavorites(at: offsets)
     }
 }
 
@@ -79,6 +48,4 @@ struct FavoritesView_Previews: PreviewProvider {
     }
 }
 
-#Preview {
-    FavoritesView()
-}
+

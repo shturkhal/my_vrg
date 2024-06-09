@@ -21,6 +21,7 @@ struct Article: Decodable, Identifiable {
     let byline: String
     let published_date: String
     let media: [Media]?
+    var isFavorite: Bool = false
 
     enum CodingKeys: String, CodingKey {
         case url

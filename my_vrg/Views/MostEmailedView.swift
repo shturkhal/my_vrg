@@ -8,74 +8,55 @@
 import SwiftUI
 
 struct MostEmailedView: View {
-    
     @StateObject private var viewModel = ArticlesViewModel()
     @EnvironmentObject var favoritesViewModel: FavoritesViewModel
-     let urlString: String
-     
-//     var body: some View {
-//         NavigationView {
-//             Group {
-//                 if viewModel.isLoading {
-//                     ProgressView("Loading...")
-//                 } else if let error = viewModel.error {
-//                     Text("Error: \(error.error.localizedDescription)")
-//                 } else {
-//                     List(viewModel.articles) { article in
-//                         NavigationLink(destination: WebView(url: URL(string: article.url)!)) {
-//                             ArticleRowView(article: article)
-//                         }
-//                     }
-//                 }
-//             }
-//             .navigationTitle("most emailed")
-//             .onAppear {
-//                 viewModel.fetchArticles(from: urlString)
-//             }
-//         }
-//     }
-// }
+    let urlString: String
     
     var body: some View {
-            NavigationView {
-                Group {
-                    if viewModel.isLoading {
-                        ProgressView("Loading...")
-                    } else if let error = viewModel.error {
-                        Text("Error: \(error.error.localizedDescription)")
-                    } else {
-                        List {
-                            ForEach(viewModel.articles) { article in
-                                NavigationLink(destination: WebView(url: URL(string: article.url)!)) {
-                                    ArticleRowView(article: article)
-                                }
-                                .swipeActions(edge: .trailing) {
-                                    Button(action: {
-                                        favoritesViewModel.addToFavorites(article: article)
-                                    }) {
-                                        Label("Add to Favorites", systemImage: "star")
+        NavigationView {
+            Group {
+                if viewModel.isLoading {
+                    ProgressView("Loading...")
+                } else if let error = viewModel.error {
+                    Text("Error: \(error.error.localizedDescription)")
+                } else {
+                    List {
+                        ForEach($viewModel.articles) { $article in
+                            NavigationLink(destination: WebView(url: URL(string: article.url)!)) {
+                                ArticleRowView(article: $article)
+                                    .swipeActions {
+                                        Button(action: {
+                                            if article.isFavorite {
+                                                favoritesViewModel.removeFromFavorites(article: article)
+                                            } else {
+                                                favoritesViewModel.addToFavorites(article: article)
+                                            }
+                                            article.isFavorite.toggle()
+                                        }) {
+                                            Text(article.isFavorite ? "Remove" : "Favorite")
+                                        }
+                                        .tint(article.isFavorite ? .red : .yellow)
                                     }
-                                    .tint(.yellow)
-                                }
                             }
                         }
                     }
                 }
-                .navigationTitle("Most Emailed")
-                .onAppear {
-                    viewModel.fetchArticles(from: urlString)
-                }
+            }
+            .navigationTitle("Most Emailed")
+            .onAppear {
+                viewModel.fetchArticles(from: urlString)
             }
         }
     }
-
-
+}
+    
 #Preview {
     MostEmailedView(urlString: "https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json")
 }
 
 struct ArticleRowView: View {
-    let article: Article
+
+    @Binding var article: Article
     
     var body: some View {
         HStack {
@@ -94,37 +75,19 @@ struct ArticleRowView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 75, height: 75)
                         .foregroundStyle(Color.gray)
-//                        .cornerRadius(20)
             }
             VStack(alignment: .leading) {
                 Text(article.title)
-                    .font(.headline)
-                   
-//                Text(article.abstract)
-//                    .font(.subheadline)
-//                    .foregroundColor(.gray)
-//                    .lineLimit(2)
-//                Text(article.byline)
-//                    .font(.caption)
-//                    .foregroundColor(.secondary)
-//                Text(article.published_date)
-//                    .font(.caption)
-//                    .foregroundColor(.secondary)
+                               .font(.headline)
+                               .foregroundColor(article.isFavorite ? .yellow : .primary)
+
             }
         }
     }
 }
 
-//
-//class FavoritesViewModel: ObservableObject {
-//    @Published var favoriteArticles: [Article] = []
-//
-//    func addToFavorites(article: Article) {
-//        if !favoriteArticles.contains(where: { $0.id == article.id }) {
-//            favoriteArticles.append(article)
-//        }
-//    }
-//}
+
+
 
 class FavoritesViewModel: ObservableObject {
     @Published var favoriteArticles: [Article] = []
@@ -135,7 +98,13 @@ class FavoritesViewModel: ObservableObject {
         }
     }
 
-    func removeFromFavorites(at offsets: IndexSet) {
+    func removeFromFavorites(article: Article) {
+        if let index = favoriteArticles.firstIndex(where: { $0.id == article.id }) {
+            favoriteArticles.remove(at: index)
+        }
+    }
+    
+    func removeFavorites(at offsets: IndexSet) {
         favoriteArticles.remove(atOffsets: offsets)
     }
 }

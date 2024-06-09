@@ -11,63 +11,45 @@ struct MostViewedView: View {
 
     @StateObject private var viewModel = ArticlesViewModel()
     @EnvironmentObject var favoritesViewModel: FavoritesViewModel
-     let urlString: String
-     
-//     var body: some View {
-//         NavigationView {
-//             Group {
-//                 if viewModel.isLoading {
-//                     ProgressView("Loading...")
-//                 } else if let error = viewModel.error {
-//                     Text("Error: \(error.error.localizedDescription)")
-//                 } else {
-//                     List(viewModel.articles) { article in
-//                         NavigationLink(destination: WebView(url: URL(string: article.url)!)) {
-//                             ArticleRowView(article: article)
-//                         }
-//                     }
-//                 }
-//             }
-//             .navigationTitle("most viewed")
-//             .onAppear {
-//                 viewModel.fetchArticles(from: urlString)
-//             }
-//             }
-//         }
-//     }
+    let urlString: String
     
     var body: some View {
-            NavigationView {
-                Group {
-                    if viewModel.isLoading {
-                        ProgressView("Loading...")
-                    } else if let error = viewModel.error {
-                        Text("Error: \(error.error.localizedDescription)")
-                    } else {
-                        List {
-                            ForEach(viewModel.articles) { article in
-                                NavigationLink(destination: WebView(url: URL(string: article.url)!)) {
-                                    ArticleRowView(article: article)
-                                }
-                                .swipeActions(edge: .trailing) {
-                                    Button(action: {
-                                        favoritesViewModel.addToFavorites(article: article)
-                                    }) {
-                                        Label("Add to Favorites", systemImage: "star")
+        NavigationView {
+            Group {
+                if viewModel.isLoading {
+                    ProgressView("Loading...")
+                } else if let error = viewModel.error {
+                    Text("Error: \(error.error.localizedDescription)")
+                } else {
+                    List {
+                        ForEach($viewModel.articles) { $article in
+                            NavigationLink(destination: WebView(url: URL(string: article.url)!)) {
+                                ArticleRowView(article: $article)
+                                    .swipeActions {
+                                        Button(action: {
+                                            if article.isFavorite {
+                                                favoritesViewModel.removeFromFavorites(article: article)
+                                            } else {
+                                                favoritesViewModel.addToFavorites(article: article)
+                                            }
+                                            article.isFavorite.toggle()
+                                        }) {
+                                            Text(article.isFavorite ? "Remove" : "Favorite")
+                                        }
+                                        .tint(article.isFavorite ? .red : .yellow)
                                     }
-                                    .tint(.yellow)
-                                }
                             }
                         }
                     }
                 }
-                .navigationTitle("most viewed")
-                .onAppear {
-                    viewModel.fetchArticles(from: urlString)
-                }
+            }
+            .navigationTitle("Most viewed")
+            .onAppear {
+                viewModel.fetchArticles(from: urlString)
             }
         }
     }
+}
 
 #Preview(body: {
     MostSharedView(urlString: "https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json")
