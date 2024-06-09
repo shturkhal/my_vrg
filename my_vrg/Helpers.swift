@@ -48,3 +48,6 @@ struct WebViewUI: UIViewRepresentable {
     }
 }
 
+#Preview(body: {
+    WebView(url: URL(string: "https://google.com")!)
+})

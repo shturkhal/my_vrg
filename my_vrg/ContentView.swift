@@ -12,6 +12,11 @@ struct ContentView: View {
         
     var body: some View {
         TabView {
+            FavoritesView()
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("Favorites")
+                }
             MostEmailedView(urlString: "https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json")
                 .tabItem {
                     Image(systemName: "envelope")
@@ -30,11 +35,7 @@ struct ContentView: View {
                     Text("Most Viewed")
                 }
             
-            FavoritesView()
-                .tabItem {
-                    Image(systemName: "star.fill")
-                    Text("Favorites")
-                }
+           
         }
     }
 }
