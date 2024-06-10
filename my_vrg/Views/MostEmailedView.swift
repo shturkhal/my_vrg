@@ -26,16 +26,13 @@ struct MostEmailedView: View {
                                 ArticleRowView(article: $article)
                                     .swipeActions {
                                         Button(action: {
-                                            if article.isFavorite {
-                                                favoritesViewModel.removeFromFavorites(article: article)
-                                            } else {
-                                                favoritesViewModel.addToFavorites(article: article)
-                                            }
+                                            favoritesViewModel.addToFavorites(article: article)
                                             article.isFavorite.toggle()
-                                        }) {
-                                            Text(article.isFavorite ? "Remove" : "Favorite")
+                                        })
+                                        {
+                                            Text("Favorite")
                                         }
-                                        .tint(article.isFavorite ? .red : .yellow)
+                                        .tint(.yellow)
                                     }
                             }
                         }
@@ -71,18 +68,20 @@ struct ArticleRowView: View {
                 .cornerRadius(20)
             } else {
                 
-                    Image(systemName: "text.below.photo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 75, height: 75)
-                        .foregroundStyle(Color.gray)
+                Image(systemName: "text.below.photo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 75, height: 75)
+                    .foregroundStyle(Color.gray)
             }
             VStack(alignment: .leading) {
                 Text(article.title)
-                               .font(.headline)
-                               .foregroundColor(article.isFavorite ? .yellow : .primary)
-
-                
+                    .font(.callout)
+                    .foregroundColor(article.isFavorite ? .yellow : .primary)
+                Text(article.byline)
+                    .font(.footnote)
+                    .lineLimit(2)
+                    .foregroundColor(article.isFavorite ? .yellow : .primary)
             }
         }
     }
