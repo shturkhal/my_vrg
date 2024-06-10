@@ -14,6 +14,7 @@ struct FavoritesView: View {
         NavigationView {
             Group {
                 if favoritesViewModel.favoriteArticles.isEmpty {
+                    
                     Text("Add your favorite news")
                         .font(.headline)
                         .foregroundColor(.gray)

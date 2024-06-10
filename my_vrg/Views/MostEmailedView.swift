@@ -40,6 +40,7 @@ struct MostEmailedView: View {
                             }
                         }
                     }
+                    .listStyle(PlainListStyle())
                 }
             }
             .navigationTitle("Most Emailed")
@@ -49,13 +50,13 @@ struct MostEmailedView: View {
         }
     }
 }
-    
+
 #Preview {
     MostEmailedView(urlString: "https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json")
 }
 
 struct ArticleRowView: View {
-
+    
     @Binding var article: Article
     
     var body: some View {
@@ -81,6 +82,7 @@ struct ArticleRowView: View {
                                .font(.headline)
                                .foregroundColor(article.isFavorite ? .yellow : .primary)
 
+                
             }
         }
     }
@@ -91,13 +93,13 @@ struct ArticleRowView: View {
 
 class FavoritesViewModel: ObservableObject {
     @Published var favoriteArticles: [Article] = []
-
+    
     func addToFavorites(article: Article) {
         if !favoriteArticles.contains(where: { $0.id == article.id }) {
             favoriteArticles.append(article)
         }
     }
-
+    
     func removeFromFavorites(article: Article) {
         if let index = favoriteArticles.firstIndex(where: { $0.id == article.id }) {
             favoriteArticles.remove(at: index)

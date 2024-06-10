@@ -12,11 +12,6 @@ struct ContentView: View {
         
     var body: some View {
         TabView {
-            FavoritesView()
-                .tabItem {
-                    Image(systemName: "star.fill")
-                    Text("Favorites")
-                }
             MostEmailedView(urlString: "https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json")
                 .tabItem {
                     Image(systemName: "envelope")
@@ -34,15 +29,22 @@ struct ContentView: View {
                     Image(systemName: "eye")
                     Text("Most Viewed")
                 }
-            
-           
+            FavoritesView()
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("Favorites")
+                }
         }
     }
 }
 
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
+
+//#Preview(body: {
+//    ContentView()
+//})

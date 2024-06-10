@@ -41,6 +41,8 @@ struct MostSharedView: View {
                             }
                         }
                     }
+                    .listStyle(PlainListStyle())
+
                 }
             }
             .navigationTitle("Most shared")

@@ -41,6 +41,7 @@ struct MostViewedView: View {
                             }
                         }
                     }
+                    .listStyle(PlainListStyle())
                 }
             }
             .navigationTitle("Most viewed")
