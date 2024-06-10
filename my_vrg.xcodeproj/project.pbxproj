@@ -12,8 +12,6 @@
 		7B7829142C14C1A500C459B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7829132C14C1A500C459B4 /* ContentView.swift */; };
 		7B7829162C14C1A600C459B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B7829152C14C1A600C459B4 /* Assets.xcassets */; };
 		7B7829192C14C1A600C459B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B7829182C14C1A600C459B4 /* Preview Assets.xcassets */; };
-		7B78291B2C14C1A600C459B4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B78291A2C14C1A600C459B4 /* Persistence.swift */; };
-		7B78291E2C14C1A600C459B4 /* my_vrg.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B78291C2C14C1A600C459B4 /* my_vrg.xcdatamodeld */; };
 		7B7829262C14C6C000C459B4 /* MostEmailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7829252C14C6C000C459B4 /* MostEmailedView.swift */; };
 		7B7829282C14C6E600C459B4 /* MostSharedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7829272C14C6E600C459B4 /* MostSharedView.swift */; };
 		7B78292A2C14C70E00C459B4 /* MostViewedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7829292C14C70E00C459B4 /* MostViewedView.swift */; };
@@ -32,8 +30,6 @@
 		7B7829132C14C1A500C459B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7B7829152C14C1A600C459B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B7829182C14C1A600C459B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7B78291A2C14C1A600C459B4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		7B78291D2C14C1A600C459B4 /* my_vrg.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = my_vrg.xcdatamodel; sourceTree = "<group>"; };
 		7B7829252C14C6C000C459B4 /* MostEmailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostEmailedView.swift; sourceTree = "<group>"; };
 		7B7829272C14C6E600C459B4 /* MostSharedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSharedView.swift; sourceTree = "<group>"; };
 		7B7829292C14C70E00C459B4 /* MostViewedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewedView.swift; sourceTree = "<group>"; };
@@ -117,8 +113,6 @@
 				7B38A2EA2C170ABB00703E7D /* ViewModels */,
 				7B38A2EC2C170AE500703E7D /* Model */,
 				7B38A2EB2C170ACA00703E7D /* Helpers */,
-				7B78291C2C14C1A600C459B4 /* my_vrg.xcdatamodeld */,
-				7B78291A2C14C1A600C459B4 /* Persistence.swift */,
 				7B7829152C14C1A600C459B4 /* Assets.xcassets */,
 				7B7829172C14C1A600C459B4 /* Preview Content */,
 			);
@@ -269,7 +263,6 @@
 			files = (
 				7B7829362C14DB8700C459B4 /* Model.swift in Sources */,
 				7B7829382C14DBB200C459B4 /* ArticlesViewModel.swift in Sources */,
-				7B78291B2C14C1A600C459B4 /* Persistence.swift in Sources */,
 				7B7829142C14C1A500C459B4 /* ContentView.swift in Sources */,
 				7B78293C2C14EAAB00C459B4 /* Helpers.swift in Sources */,
 				7B7829282C14C6E600C459B4 /* MostSharedView.swift in Sources */,
@@ -277,7 +270,6 @@
 				7B7829262C14C6C000C459B4 /* MostEmailedView.swift in Sources */,
 				7B78292C2C14C79000C459B4 /* FavoritesView.swift in Sources */,
 				7B7829122C14C1A500C459B4 /* my_vrgApp.swift in Sources */,
-				7B78291E2C14C1A600C459B4 /* my_vrg.xcdatamodeld in Sources */,
 				7B78292A2C14C70E00C459B4 /* MostViewedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,19 +488,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		7B78291C2C14C1A600C459B4 /* my_vrg.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				7B78291D2C14C1A600C459B4 /* my_vrg.xcdatamodel */,
-			);
-			currentVersion = 7B78291D2C14C1A600C459B4 /* my_vrg.xcdatamodel */;
-			path = my_vrg.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 7B7829062C14C1A500C459B4 /* Project object */;
 }

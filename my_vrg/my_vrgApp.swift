@@ -9,13 +9,13 @@ import SwiftUI
 
 @main
 struct my_vrgApp: App {
-    let persistenceController = PersistenceController.shared
+//    let persistenceController = PersistenceController.shared
     @StateObject private var favoritesViewModel = FavoritesViewModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(favoritesViewModel)
         }
     }
