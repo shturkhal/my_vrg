@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7B38A2E92C170A2F00703E7D /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A2E82C170A2F00703E7D /* FavoritesViewModel.swift */; };
+		7B38A2FA2C17A15200703E7D /* DataContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A2F82C17A15200703E7D /* DataContainer.xcdatamodeld */; };
 		7B7829122C14C1A500C459B4 /* my_vrgApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7829112C14C1A500C459B4 /* my_vrgApp.swift */; };
 		7B7829142C14C1A500C459B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7829132C14C1A500C459B4 /* ContentView.swift */; };
 		7B7829162C14C1A600C459B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B7829152C14C1A600C459B4 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		2F07A077370BDD8D3F754DB4 /* Pods_my_vrg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_my_vrg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B38A2E82C170A2F00703E7D /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		7B38A2F92C17A15200703E7D /* DataContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataContainer.xcdatamodel; sourceTree = "<group>"; };
 		7B78290E2C14C1A500C459B4 /* my_vrg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = my_vrg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7829112C14C1A500C459B4 /* my_vrgApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_vrgApp.swift; sourceTree = "<group>"; };
 		7B7829132C14C1A500C459B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				7B78293B2C14EAAB00C459B4 /* Helpers.swift */,
+				7B38A2F82C17A15200703E7D /* DataContainer.xcdatamodeld */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				7B7829382C14DBB200C459B4 /* ArticlesViewModel.swift in Sources */,
 				7B7829142C14C1A500C459B4 /* ContentView.swift in Sources */,
 				7B78293C2C14EAAB00C459B4 /* Helpers.swift in Sources */,
+				7B38A2FA2C17A15200703E7D /* DataContainer.xcdatamodeld in Sources */,
 				7B7829282C14C6E600C459B4 /* MostSharedView.swift in Sources */,
 				7B38A2E92C170A2F00703E7D /* FavoritesViewModel.swift in Sources */,
 				7B7829262C14C6C000C459B4 /* MostEmailedView.swift in Sources */,
@@ -488,6 +492,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7B38A2F82C17A15200703E7D /* DataContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7B38A2F92C17A15200703E7D /* DataContainer.xcdatamodel */,
+			);
+			currentVersion = 7B38A2F92C17A15200703E7D /* DataContainer.xcdatamodel */;
+			name = DataContainer.xcdatamodeld;
+			path = /Users/shturkhal/Desktop/my_vrg/my_vrg/Helpers/DataContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7B7829062C14C1A500C459B4 /* Project object */;
 }
