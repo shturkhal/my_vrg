@@ -75,9 +75,9 @@ struct ArticleRowView: View {
                     .font(.callout)
                     .foregroundColor(article.isFavorite ? .yellow : .primary)
                 Text(article.byline)
-                    .font(.footnote)
+                    .fontWeight(.light)
                     .lineLimit(2)
-                    .foregroundColor(article.isFavorite ? .yellow : .primary)
+                    .foregroundColor(article.isFavorite ? .yellow : .gray)
             }
         }
     }
