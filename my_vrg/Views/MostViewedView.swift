@@ -52,6 +52,3 @@ struct MostViewedView: View {
     }
 }
 
-#Preview(body: {
-    MostSharedView(urlString: "https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json")
-})
