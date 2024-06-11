@@ -93,7 +93,7 @@ extension ArticleEntity {
         return Article(
             url: self.url ?? "", title: self.title ?? "",
             abstract: "",
-            byline: "",
+            byline: self.byline ?? "",
             published_date: "",
             media: media
         )
@@ -102,6 +102,7 @@ extension ArticleEntity {
     func fromArticle(_ article: Article) {
         self.title = article.title
         self.url = article.url
+        self.byline = article.byline
         if let media = article.media {
             self.mediaData = try? JSONEncoder().encode(media)
         }
