@@ -27,16 +27,13 @@ struct MostSharedView: View {
                                 ArticleRowView(article: $article)
                                     .swipeActions {
                                         Button(action: {
-                                            if article.isFavorite {
-                                                favoritesViewModel.removeFromFavorites(article: article)
-                                            } else {
-                                                favoritesViewModel.addToFavorites(article: article)
-                                            }
+                                            favoritesViewModel.addToFavorites(article: article)
                                             article.isFavorite.toggle()
-                                        }) {
-                                            Text(article.isFavorite ? "Remove" : "Favorite")
+                                        })
+                                        {
+                                            Text("Favorite")
                                         }
-                                        .tint(article.isFavorite ? .red : .yellow)
+                                        .tint(.yellow)
                                     }
                             }
                         }

@@ -32,19 +32,11 @@ struct FavoritesView: View {
                                     }
                             }
                         }
-                        .onDelete(perform: favoritesViewModel.removeFavorites(at:))
                     }
                 }
             }
             .navigationBarTitle("Favorites")
         }
-    }
-}
-
-struct FavoritesView_Previews: PreviewProvider {
-    static var previews: some View {
-        FavoritesView()
-            .environmentObject(FavoritesViewModel())
     }
 }
 

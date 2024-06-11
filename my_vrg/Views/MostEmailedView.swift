@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MostEmailedView: View {
+    
     @StateObject private var viewModel = ArticlesViewModel()
     @EnvironmentObject var favoritesViewModel: FavoritesViewModel
     let urlString: String
@@ -46,8 +47,4 @@ struct MostEmailedView: View {
             }
         }
     }
-}
-
-#Preview {
-    MostEmailedView(urlString: "https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json")
 }

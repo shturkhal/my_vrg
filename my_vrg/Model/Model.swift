@@ -22,7 +22,7 @@ struct Article: Decodable, Identifiable {
     let published_date: String
     let media: [Media]?
     var isFavorite: Bool = false
-
+    
     enum CodingKeys: String, CodingKey {
         case url
         case title
@@ -38,7 +38,7 @@ struct Media: Decodable {
     let subtype: String
     let caption: String
     let media_metadata: [MediaMetadata]
-
+    
     enum CodingKeys: String, CodingKey {
         case type
         case subtype

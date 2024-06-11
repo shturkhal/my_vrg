@@ -6,10 +6,9 @@
 //
 
 import SwiftUI
-import Alamofire
 
 struct ContentView: View {
-        
+    
     var body: some View {
         TabView {
             MostEmailedView(urlString: "https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json")
@@ -37,14 +36,3 @@ struct ContentView: View {
         }
     }
 }
-
-
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
-
-//#Preview(body: {
-//    ContentView()
-//})

@@ -6,10 +6,10 @@
 //
 
 import SwiftUI
-import Combine
 import Alamofire
 
 class ArticlesViewModel: ObservableObject {
+    
     @Published var articles: [Article] = []
     @Published var isLoading = false
     @Published var error: IdentifiableError? = nil
