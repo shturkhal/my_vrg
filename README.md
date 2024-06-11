@@ -4,7 +4,6 @@
 </div>
 my_vrg - is a NYTimes articles mobile app.
 The API from the website https://developer.nytimes.com is used to access the news. 
- 
 The app allows you to get access to the latest articles that you can add to your favorites and come back to them whenever you need. 
 
 ## Frameworks
