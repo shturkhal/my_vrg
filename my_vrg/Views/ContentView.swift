@@ -20,17 +20,19 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "square.and.arrow.up")
                 }
-  
+            
             MostViewedView(urlString: "https://api.nytimes.com/svc/mostpopular/v2/viewed/30.json")
                 .tabItem {
                     Image(systemName: "eye.square")
                 }
-  
+            
             FavoritesView()
                 .tabItem {
                     Image(systemName: "star.square.on.square")
                 }
         }
+        .accentColor(.newYellow)
         .font(.footnote)
     }
 }
+

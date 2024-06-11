@@ -14,9 +14,18 @@ struct FavoritesView: View {
         NavigationView {
             Group {
                 if favoritesViewModel.favoriteArticles.isEmpty {
-                    Text("Add your favorite news")
-                        .font(.headline)
-                        .foregroundColor(.gray)
+                    VStack {
+                        Image("demo")
+                            .resizable()
+                            .cornerRadius(20)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 200)
+                            .shadow(color: .newYellow, radius: 10)
+                        Text("Swipe left\n to add your favorite")
+                            .font(.headline)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.gray)
+                    }
                 } else {
                     List {
                         ForEach(favoritesViewModel.favoriteArticles) { article in
@@ -38,7 +47,6 @@ struct FavoritesView: View {
             }
             .navigationBarTitle("Favorites")
         }
-
     }
 }
 

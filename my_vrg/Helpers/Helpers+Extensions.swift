@@ -73,11 +73,11 @@ struct ArticleRowView: View {
             VStack(alignment: .leading) {
                 Text(article.title)
                     .font(.callout)
-                    .foregroundColor(article.isFavorite ? .yellow : .primary)
+                    .foregroundColor(article.isFavorite ? .newYellow : .primary)
                 Text(article.byline)
                     .fontWeight(.light)
                     .lineLimit(2)
-                    .foregroundColor(article.isFavorite ? .yellow : .gray)
+                    .foregroundColor(article.isFavorite ? .newYellow : .gray)
             }
         }
     }

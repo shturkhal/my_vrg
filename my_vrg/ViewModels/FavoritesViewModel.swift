@@ -11,7 +11,8 @@ import CoreData
 
 class FavoritesViewModel: ObservableObject {
     @Published var favoriteArticles: [Article] = []
-
+    let haptic = UIImpactFeedbackGenerator(style: .heavy)
+    
     private var context: NSManagedObjectContext
 
     init(context: NSManagedObjectContext = CoreDataManager.shared.context) {
@@ -23,6 +24,7 @@ class FavoritesViewModel: ObservableObject {
         if !favoriteArticles.contains(where: { $0.url == article.url }) {
             favoriteArticles.append(article)
             saveArticle(article)
+            haptic.impactOccurred()
         }
     }
 
@@ -30,6 +32,7 @@ class FavoritesViewModel: ObservableObject {
         if let index = favoriteArticles.firstIndex(where: { $0.url == article.url }) {
             favoriteArticles.remove(at: index)
             deleteArticle(article)
+            haptic.impactOccurred()
         }
     }
 

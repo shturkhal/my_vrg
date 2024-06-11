@@ -33,7 +33,7 @@ struct MostViewedView: View {
                                         {
                                             Text("Favorite")
                                         }
-                                        .tint(.yellow)
+                                        .tint(.newYellow)
                                     }
                             }
                         }

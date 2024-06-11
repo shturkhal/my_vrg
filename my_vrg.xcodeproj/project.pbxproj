@@ -10,6 +10,7 @@
 		7B38A2E92C170A2F00703E7D /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A2E82C170A2F00703E7D /* FavoritesViewModel.swift */; };
 		7B38A2FA2C17A15200703E7D /* DataContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A2F82C17A15200703E7D /* DataContainer.xcdatamodeld */; };
 		7B38A30B2C18628000703E7D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A30A2C18628000703E7D /* CoreDataManager.swift */; };
+		7B38A30D2C189D0C00703E7D /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A30C2C189D0C00703E7D /* OnboardingPageView.swift */; };
 		7B7829122C14C1A500C459B4 /* my_vrgApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7829112C14C1A500C459B4 /* my_vrgApp.swift */; };
 		7B7829142C14C1A500C459B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7829132C14C1A500C459B4 /* ContentView.swift */; };
 		7B7829162C14C1A600C459B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B7829152C14C1A600C459B4 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		7B38A2E82C170A2F00703E7D /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		7B38A2F92C17A15200703E7D /* DataContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataContainer.xcdatamodel; sourceTree = "<group>"; };
 		7B38A30A2C18628000703E7D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		7B38A30C2C189D0C00703E7D /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		7B78290E2C14C1A500C459B4 /* my_vrg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = my_vrg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7829112C14C1A500C459B4 /* my_vrgApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_vrgApp.swift; sourceTree = "<group>"; };
 		7B7829132C14C1A500C459B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				7B7829272C14C6E600C459B4 /* MostSharedView.swift */,
 				7B7829292C14C70E00C459B4 /* MostViewedView.swift */,
 				7B78292B2C14C79000C459B4 /* FavoritesView.swift */,
+				7B38A30C2C189D0C00703E7D /* OnboardingPageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				7B38A30B2C18628000703E7D /* CoreDataManager.swift in Sources */,
 				7B38A2E92C170A2F00703E7D /* FavoritesViewModel.swift in Sources */,
 				7B7829262C14C6C000C459B4 /* MostEmailedView.swift in Sources */,
+				7B38A30D2C189D0C00703E7D /* OnboardingPageView.swift in Sources */,
 				7B78292C2C14C79000C459B4 /* FavoritesView.swift in Sources */,
 				7B7829122C14C1A500C459B4 /* my_vrgApp.swift in Sources */,
 				7B78292A2C14C70E00C459B4 /* MostViewedView.swift in Sources */,

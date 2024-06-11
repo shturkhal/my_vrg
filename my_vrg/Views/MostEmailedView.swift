@@ -29,11 +29,9 @@ struct MostEmailedView: View {
                                         Button(action: {
                                             favoritesViewModel.addToFavorites(article: article)
                                             article.isFavorite.toggle()
-                                        })
-                                        {
-                                            Text("Favorite")
-                                        }
-                                        .tint(.yellow)
+                                        }) {
+                                            Text("Favorite") }
+                                        .tint(.newYellow)
                                     }
                             }
                         }
