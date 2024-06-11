@@ -13,30 +13,23 @@ struct ContentView: View {
         TabView {
             MostEmailedView(urlString: "https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json")
                 .tabItem {
-                    Image(systemName: "envelope")
-
+                    Image(systemName: "mail")
                 }
-            
             
             MostSharedView(urlString: "https://api.nytimes.com/svc/mostpopular/v2/shared/30.json")
                 .tabItem {
                     Image(systemName: "square.and.arrow.up")
-
                 }
-              
-            
+  
             MostViewedView(urlString: "https://api.nytimes.com/svc/mostpopular/v2/viewed/30.json")
                 .tabItem {
-                    Image(systemName: "eye")
-
+                    Image(systemName: "eye.square")
                 }
-              
-                
+  
             FavoritesView()
                 .tabItem {
-                    Image(systemName: "star.fill")
+                    Image(systemName: "star.square.on.square")
                 }
-   
         }
         .font(.footnote)
     }

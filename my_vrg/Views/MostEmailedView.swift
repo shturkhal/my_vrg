@@ -41,7 +41,7 @@ struct MostEmailedView: View {
                     .listStyle(PlainListStyle())
                 }
             }
-            .navigationTitle("Most Emailed")
+            .navigationTitle("Most emailed")
             .onAppear {
                 viewModel.fetchArticles(from: urlString)
             }
