@@ -9,12 +9,17 @@ import SwiftUI
 
 @main
 struct my_vrgApp: App {
-    let persistenceController = PersistenceController.shared
-
+    @StateObject private var favoritesViewModel = FavoritesViewModel()
+    @AppStorage("firstLaunch") var firstLaunch = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            if firstLaunch {
+                OnboardingPageView(firstLaunch: $firstLaunch, imageName: "appLogo", title: "Welcome to your\n news app", description: "To add article to your Favorite,\n just swipe article to the left") }
+            else {
+                ContentView()
+                    .environmentObject(favoritesViewModel)
+            }
         }
     }
 }
