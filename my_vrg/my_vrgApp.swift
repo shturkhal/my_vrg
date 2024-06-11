@@ -15,7 +15,7 @@ struct my_vrgApp: App {
     var body: some Scene {
         WindowGroup {
             if firstLaunch {
-                OnboardingPageView(firstLaunch: $firstLaunch, imageName: "appLogo", title: "Welcome to your\n news app", description: "To add article to your Favorite,\n just swipe article to the left") }
+                OnboardingPageView(firstLaunch: $firstLaunch, imageName: "appLogo", title: "Welcome to your\n articles app", description: "To add article to your Favorite,\n just swipe an article to the left") }
             else {
                 ContentView()
                     .environmentObject(favoritesViewModel)
