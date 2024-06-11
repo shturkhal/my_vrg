@@ -2,34 +2,34 @@
 <div align="center">
  <img src="mark_images/appIcon.png" alt="my_vrg icon" width="300"/>
 </div>
-my_vrg - це мобільний застосунок для перегляду новин з NYTimes.
-Для доступу використовується API з сайту https://developer.nytimes.com
- 
-Застосунок дозволяє користувачам залишатися в курсі останніх подій, читати статті та додавати їх в улюблене для подальшого зручного перегляду.
+my_vrg - is a NYTimes articles mobile app.
+The API from the website https://developer.nytimes.com is used to access the news. 
+ 
+The app allows you to get access to the latest articles that you can add to your favorites and come back to them whenever you need. 
 
 ## Frameworks
 
-- **SwiftUI**: Для побудови інтерфейсу.
-- **Alamofire**: Для посилання запитів для отримання інформації.
-- **Core Data**: Для зберігання посилань улюблених статей.
-- **WebKit**: Для огляду WEB сторінок статей.
+- SwiftUI: is used to build the interface.
+- Alamofire: is used to send requests and get responses.
+- Core Data: is used to save the data of articles to the "Favorites" tab.
+- WebKit: is used to view the web pages of the articles. 
 
-## Використання
+## What you can do with our app. 
 
-### Перегляд новин
+### Review articles 
 
-Відкрийте застосунок і виберіть категорію новин (**Most emailed, Most shared, Most viewed**), що вас цікавить. Переглядайте останні новини та відкривайте статті для детального перегляду.
+You can open the app and select the category of the articles (**Most emailed, Most shared, Most viewed**). Have a brief overview of articles under each category and open any article to full access to the content. 
 
-### Додавання в улюблене
+### Add to favorites. 
 
 ![App_Demo](mark_images/demo.png)
 
-Щоб додати статтю в улюблене, проведіть по статті свайпом вліво. Підтвердженням додавання буде зафарбування назви статті в жовтий колір.
-Після переходу на інші вкладки зафарбування зникає.
-Улюблені статті можна переглянути у вкладці "Улюблене".
+To add some articles to the favorites simply swipe left. To verify that your article has been added to the favorites will be a change of color of the article title to yellow. 
+Switching between tabs of the categories will erase the yellow highlight.
+Your favorite articles will be available in the section "Favorites". 
 
-### Видалення з улюбленого
+### Deleting from favorites.
 
-Щоб видалити статтю з улюбленого, проведіть по статті свайпом вліво. Стаття буде видалена.
+Make sure the section "Favorites" is open, then swipe left to the added article. The article will be deleted from your "Favorites".
 
 [IOS Internship.pdf](https://github.com/user-attachments/files/15792587/IOS.Internship.pdf)
