@@ -33,7 +33,7 @@ struct Article: Decodable, Identifiable {
     }
 }
 
-struct Media: Decodable {
+struct Media: Codable {
     let type: String
     let subtype: String
     let caption: String
@@ -47,7 +47,7 @@ struct Media: Decodable {
     }
 }
 
-struct MediaMetadata: Decodable {
+struct MediaMetadata: Codable {
     let url: String
     let format: String
     let height: Int

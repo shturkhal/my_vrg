@@ -8,30 +8,31 @@
 import SwiftUI
 import CoreData
 
+
 class FavoritesViewModel: ObservableObject {
     @Published var favoriteArticles: [Article] = []
-    
+
     private var context: NSManagedObjectContext
-    
+
     init(context: NSManagedObjectContext = CoreDataManager.shared.context) {
         self.context = context
         fetchFavorites()
     }
-    
+
     func addToFavorites(article: Article) {
         if !favoriteArticles.contains(where: { $0.url == article.url }) {
             favoriteArticles.append(article)
             saveArticle(article)
         }
     }
-    
+
     func removeFromFavorites(article: Article) {
         if let index = favoriteArticles.firstIndex(where: { $0.url == article.url }) {
             favoriteArticles.remove(at: index)
             deleteArticle(article)
         }
     }
-    
+
     private func fetchFavorites() {
         let request: NSFetchRequest<ArticleEntity> = ArticleEntity.fetchRequest()
         do {
@@ -41,17 +42,17 @@ class FavoritesViewModel: ObservableObject {
             print("Failed to fetch favorite articles: \(error)")
         }
     }
-    
+
     private func saveArticle(_ article: Article) {
         let entity = ArticleEntity(context: context)
         entity.fromArticle(article)
         saveContext()
     }
-    
+
     private func deleteArticle(_ article: Article) {
         let request: NSFetchRequest<ArticleEntity> = ArticleEntity.fetchRequest()
         request.predicate = NSPredicate(format: "url == %@", article.url as CVarArg)
-        
+
         do {
             let entities = try context.fetch(request)
             if let entity = entities.first {
@@ -62,7 +63,7 @@ class FavoritesViewModel: ObservableObject {
             print("Failed to delete article: \(error)")
         }
     }
-    
+
     private func saveContext() {
         do {
             try context.save()
@@ -71,7 +72,3 @@ class FavoritesViewModel: ObservableObject {
         }
     }
 }
-
-
-
-

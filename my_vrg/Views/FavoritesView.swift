@@ -33,6 +33,7 @@ struct FavoritesView: View {
                             }
                         }
                     }
+                    .listStyle(PlainListStyle())
                 }
             }
             .navigationBarTitle("Favorites")

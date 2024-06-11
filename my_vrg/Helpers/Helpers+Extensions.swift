@@ -85,16 +85,25 @@ struct ArticleRowView: View {
 
 extension ArticleEntity {
     func toArticle() -> Article {
+        var media: [Media]?
+        if let mediaData = self.mediaData {
+            media = try? JSONDecoder().decode([Media].self, from: mediaData)
+        }
+
         return Article(
             url: self.url ?? "", title: self.title ?? "",
             abstract: "",
             byline: "",
-            published_date: "", media: nil
+            published_date: "",
+            media: media
         )
     }
-    
+
     func fromArticle(_ article: Article) {
         self.title = article.title
         self.url = article.url
+        if let media = article.media {
+            self.mediaData = try? JSONEncoder().encode(media)
+        }
     }
 }
