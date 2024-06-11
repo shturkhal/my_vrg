@@ -1,5 +1,7 @@
 # my_vrg
-<img src="mark_images/appIcon.png" alt="my_vrg icon" width="300"/>
+<div align="center">
+ <img src="mark_images/appIcon.png" alt="my_vrg icon" width="300"/>
+</div>
 my_vrg - це мобільний застосунок для перегляду новин з NYTimes.
 Для доступу використовується API з сайту https://developer.nytimes.com
  
